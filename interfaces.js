@@ -1,11 +1,10 @@
-var fourthLake = {
-    name: 'Tanganyika',
-    depth: 1470,
-    length: 676,
-    area: 32600,
-    isFreshwater: true,
-    countries: ['Burundi', 'Tanzania', 'Zambia', 'Congo'],
-    kigoma: 'Tanzania',
-    kalemie: 'Congo',
-    bujumbura: 'Burundi'
+var tank = {
+    size: 50,
+    health: 100,
+    range: 60,
+    damage: 12
 };
+// This is Okay 
+tank.health = 95;
+// Error because 'damage' is read-only. 
+tank.damage = 10;
