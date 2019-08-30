@@ -1,8 +1,23 @@
-function removeIt<T>(theInput: T, theIt: string): T {
-    let theRegex = new RegExp(theIt, "gi");
-    return theInput.replace(theRegex, ''); 
-    /*replace da error ya que los "GENERICOS" solo funcionan con 
-    aplicables a todos los tipos de datos y no puede suponer
-    que es tal tipo de dato
-    */
+interface People {
+    name: string
 }
+ 
+interface Family {
+    name: string,
+    age: number,
+    relation: string }
+ 
+interface Celebrity extends People {
+    profession: string
+}
+ 
+function printName<T extends People>(theInput: T): void {
+    console.log(`My name is ${theInput.name}`);
+}
+ 
+let serena: Celebrity = {
+    name: 'Serena Williams',
+    profession: 'Tennis Player'
+}
+ 
+printName(serena);
