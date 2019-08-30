@@ -12,8 +12,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Person = /** @class */ (function () {
-    function Person(theName) {
+    function Person(theName, theAge) {
         this.name = theName;
+        this.age = theAge;
     }
     Person.prototype.introduceSelf = function () {
         console.log("Hi, I am " + this.name + "!");
@@ -22,18 +23,20 @@ var Person = /** @class */ (function () {
 }());
 var Friend = /** @class */ (function (_super) {
     __extends(Friend, _super);
-    function Friend(name, yearsKnown) {
-        var _this = _super.call(this, name) || this;
+    function Friend(name, age, yearsKnown) {
+        var _this = _super.call(this, name, age) || this;
         _this.yearsKnown = yearsKnown;
         return _this;
     }
     Friend.prototype.timeKnown = function () {
         console.log("We have been friends for " + this.yearsKnown + " years.");
     };
+    Friend.prototype.friendSince = function () {
+        var firstAge = this.age - this.yearsKnown;
+        console.log("We have been friends since I was " + firstAge + " years old.");
+    };
     return Friend;
 }(Person));
-var friendA = new Friend("Jacob", 6);
-// Prints: Hi, I am Jacob! 
-friendA.introduceSelf();
-// Prints: We have been friends for 6 years. 
-friendA.timeKnown();
+var friendA = new Friend("William", 19, 8);
+// Prints: We have been friends since I was 11 years old. 
+friendA.friendSince();
