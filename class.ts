@@ -1,5 +1,5 @@
 class Person {
-    name: string;
+    private name: string; //Ponemos la variable en privado
     constructor(theName: string) {
         this.name = theName;
     }    introduceSelf() {
@@ -12,7 +12,7 @@ let personA = new Person("Sally");
 personA.introduceSelf();
 
 // Imprime "Hi, I am Sally!"
-personA.name = "Mindy";
+personA.name = "Mindy"; // No se puede modificar ya que no es publico
  
 // Imprime "Hi, I am Mindy!" 
 personA.introduceSelf();
