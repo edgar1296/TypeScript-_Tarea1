@@ -9,3 +9,7 @@ var Person = /** @class */ (function () {
 }());
 var personA = new Person("Sally");
 personA.introduceSelf();
+// Imprime "Hi, I am Sally!"
+personA.name = "Mindy";
+// Imprime "Hi, I am Mindy!" 
+personA.introduceSelf();

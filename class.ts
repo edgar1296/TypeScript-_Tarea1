@@ -10,3 +10,9 @@ class Person {
 let personA = new Person("Sally");
  
 personA.introduceSelf();
+
+// Imprime "Hi, I am Sally!"
+personA.name = "Mindy";
+ 
+// Imprime "Hi, I am Mindy!" 
+personA.introduceSelf();
