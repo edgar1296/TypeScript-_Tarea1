@@ -1,18 +1,28 @@
 class Person {
-    private name: string; //Ponemos la variable en privado
+    private name: string;
     constructor(theName: string) {
         this.name = theName;
-    }    introduceSelf() {
+    }    
+    introduceSelf() {
         console.log("Hi, I am " + this.name + "!");
     }
 }
  
-let personA = new Person("Sally");
+class Friend extends Person {
+    yearsKnown: number;
+    constructor(name: string, yearsKnown: number) {
+        super(name);
+        this.yearsKnown = yearsKnown;
+    }
+    timeKnown() {
+        console.log("We have been friends for " + this.yearsKnown + " years.")
+    }
+}
  
-personA.introduceSelf();
-
-// Imprime "Hi, I am Sally!"
-personA.name = "Mindy"; // No se puede modificar ya que no es publico
+let friendA = new Friend("Jacob", 6);
  
-// Imprime "Hi, I am Mindy!" 
-personA.introduceSelf();
+// Prints: Hi, I am Jacob! 
+friendA.introduceSelf();
+ 
+// Prints: We have been friends for 6 years. 
+friendA.timeKnown();
